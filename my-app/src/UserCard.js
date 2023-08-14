@@ -19,21 +19,26 @@ function UserCard(props){
 
     return(
         <div className="userCardHolder">
-            <div>
-                <div>{ currentItem.id }/{ items.length }</div>
-                <h1>{ currentItem.name.first } { currentItem.name.last }</h1>
-                <ul>
-                    <li><b>From: </b>{ currentItem.city }, { currentItem.country }</li>
-                    <li><b>Job Title: </b>{ currentItem.title }</li>
-                    <li><b>Employer: </b>{ currentItem.employer }</li>
-                        <ol><b>Favorite Movies:</b>
+            <div className="itemNumberContainer">
+                <div className="itemNumber"><b>{ currentItem.id }/{ items.length }</b></div>
+            </div>
+            <div className="userInfoContainer">
+                <h1 className='userNames'>{ currentItem.name.first } { currentItem.name.last }</h1>
+                <div className='blueUnderline'></div>
+                <ul className="userInfo">
+                    <li className="listItemMain"><b>From: </b>{ currentItem.city }, { currentItem.country }</li>
+                    <li className="listItemMain"><b>Job Title: </b>{ currentItem.title }</li>
+                    <li className="listItemMain"><b>Employer: </b>{ currentItem.employer }</li>
+                        <ol className="movieList"><b>Favorite Movies:</b>
                             { currentItem.favoriteMovies.map((item, index) => (
-                                <li key= { index }>{ item }</li>
+                                <li className="movies" key= { index }>{ item }</li>
                             ))}
                         </ol>
 
                 </ul>
             </div>
+            <button className="prevBttn" onClick={ prevItem }>&#60; Previous</button>
+            <button className="nextBttn" onClick={ nextItem }>Next &#62;</button>
         </div>
     )
 }
