@@ -14,13 +14,18 @@ function UserCard(props){
         setCurrentIndex(prevIndex => (prevIndex -1 + items.length) % items.length);
     }
 
+    const deleteUser = (id) => {
+        console.log('Deleting user with ID:', id)
+        setItems(prevItems => prevItems.filter(item => item.id !== id));
+      }
+
     const currentItem = items[currentIndex]
 
 
     return(
         <div className="userCardHolder">
             <div className="itemNumberContainer">
-                <div className="itemNumber"><b>{ currentItem.id }/{ items.length }</b></div>
+                <div className="itemNumber"><b>{ currentIndex + 1 }/{ items.length }</b></div>
             </div>
             <div className="userInfoContainer">
                 <h1 className='userNames'>{ currentItem.name.first } { currentItem.name.last }</h1>
@@ -39,6 +44,11 @@ function UserCard(props){
             </div>
             <button className="prevBttn" onClick={ prevItem }>&#60; Previous</button>
             <button className="nextBttn" onClick={ nextItem }>Next &#62;</button>
+            <div className="editDeleteNewBttnsContainer">
+                <button className="blueBttns shorter">Edit</button>
+                <button className="blueBttns longer" onClick={() => { deleteUser(currentItem.id)} } >Delete</button>
+                <button className="blueBttns shorter">New</button>
+            </div>
         </div>
     )
 }

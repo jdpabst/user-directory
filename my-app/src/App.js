@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import UserCard from './UserCard.js';
 import data from './data';
-import UserCard from './UserCard.js'
 import './App.css';
 
 function App() {

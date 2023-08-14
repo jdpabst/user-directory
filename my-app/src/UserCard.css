@@ -71,3 +71,30 @@ ul {
   font-weight: 800;
   font-size: 14px;
 }
+
+.editDeleteNewBttnsContainer {
+  /* border: 1px solid black; */
+  width: 155px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: -20px;
+  margin: 0 auto;
+}
+
+.blueBttns {
+  font-size: 10px;
+  font-weight: 800;
+  color: white;
+  /* width: 50px; */
+  height: 22px;
+  border-radius: 10px;
+  background-color: #34a5da
+}
+.longer {
+  width: 50px;
+}
+
+.shorter {
+  width: 40px;
+}
